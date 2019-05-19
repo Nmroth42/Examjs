@@ -1,0 +1,13 @@
+.btn-bottom {
+    display:flex;
+    justify-content: center;
+   margin-bottom:25px;
+}
+.white-btn {
+  background: white;
+  color:black;
+}
+.white-btn:hover {
+  background:white;
+  
+}

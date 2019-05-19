@@ -1,0 +1,29 @@
+.Input {
+  background: white;
+  color:black;
+  border:none;
+  position: relative;
+  top:3px ;
+}
+.test_block {
+  width: 100%;
+  text-align: left;
+
+}
+
+.r0 {
+padding: 0.3em 0 0.3em 25px;
+text-indent: -25px;
+}
+label:hover {
+  cursor: pointer;
+}
+label {
+  color:rgba(0, 0, 0, 0.87);
+    font-size:10.0pt;
+  
+}
+p {
+  color:rgba(0, 0, 0, 0.87);
+  font-size:10.0pt;
+}
