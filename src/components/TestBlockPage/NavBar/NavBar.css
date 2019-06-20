@@ -1,0 +1,30 @@
+.navBar{
+
+  border-radius: 4px;
+text-align: left;
+
+  
+ margin:15px;
+display:flex;
+justify-content: space-between ;
+ padding:7px;
+ background:white;
+ border: 1px solid rgba(77, 73, 73, 0.158);
+}
+a {
+  color:white;
+}
+button {
+ color:rgb(54, 49, 49);
+ background:white;
+ box-shadow:none;
+ padding:4px;
+ border:none;
+ margin:2px;
+}
+button:hover {
+  cursor: pointer;
+  
+}
+
+

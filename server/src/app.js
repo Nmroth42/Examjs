@@ -5,11 +5,21 @@ const morgan = require('morgan')
 const cors = require('cors')
 const serveStatic = require('serve-static')
 const path = require('path')
+const connectDB = require('../config/db')
+const mongoose = require('mongoose')
+
+const TestController = require('../routes/api/questions')
+
+
+connectDB();
+
 
 const app = express()
+
 app.use(morgan('combine'))
 app.use(bodyParser.json())
 app.use(cors())
+app.options('*', cors());
 
 // app.get('/', function (req, res) {
 //    res.send('Hello World');
@@ -24,10 +34,12 @@ app.use(cors())
 
 app.use('/', serveStatic(path.join(__dirname, '../../build')))
 app.use('/quiz', serveStatic(path.join(__dirname, '../../build')))
-
+// app.use('/api/questions/:testId', require('../routes/api/questions'))
+app.use('/api/tests', require('../routes/api/tests'))
 // app.get('*', function (request, response){
 //   response.sendFile(path.join(__dirname, '../../build'))
 // })
+app.get('/api/questions/:testId', TestController.show)
 
 
 const port = process.env.PORT || 8080
@@ -35,4 +47,4 @@ app.listen(port)
 
 
 
-console.log('listening on port: ' +port)
+console.log('listening on port: ' + port)
