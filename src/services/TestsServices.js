@@ -6,7 +6,10 @@ export default {
     },
     getQuestions (testId) {
         return Api().get(`api/questions/${testId}`)
-    }
+    },
+    postAnswers (answers) {
+        return Api().post('api/answers', answers)
+    },
     // show (songId) {
     //     return Api().get(`songs/${songId}`)
     // },

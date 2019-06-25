@@ -40,6 +40,7 @@ app.use('/api/tests', require('../routes/api/tests'))
 //   response.sendFile(path.join(__dirname, '../../build'))
 // })
 app.get('/api/questions/:testId', TestController.show)
+app.post('/api/answers', TestController.answers)
 
 
 const port = process.env.PORT || 8080

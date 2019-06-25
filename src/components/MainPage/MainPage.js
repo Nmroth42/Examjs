@@ -3,7 +3,7 @@ import "./MainPage.css";
 import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import axios from 'axios'
 import classes from "./MainPage.css";
-import SongsService from '../../services/TestsServices'
+import TestServices from '../../services/TestsServices'
 
 class TestsPage extends Component {
   state = {
@@ -13,8 +13,9 @@ class TestsPage extends Component {
   async componentDidMount() {
     // axios.get('http://localhost:8080/api/tests').then(res => {   console.log(res)
     // })
-    const testsbuf = (await SongsService.getTests()).data;
+    const testsbuf = (await TestServices.getTests()).data;
     this.setState({tests: testsbuf})
+    // console.log(this.props.location.pathname);
     console.log(testsbuf)
   }
   ClickTestHandler = (testIndex) => {

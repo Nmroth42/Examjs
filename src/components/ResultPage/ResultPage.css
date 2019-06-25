@@ -15,7 +15,8 @@ a {
     margin: 25px;
     width: 50vw;
     padding: 25px;
-    /* border: 1px solid rgba(77, 73, 73, 0.158); */
+    /* border-left: 1px solid rgba(77, 73, 73, 0.158);
+    border-right: 1px solid rgba(77, 73, 73, 0.158); */
     background: white;
   }
  

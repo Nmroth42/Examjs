@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Mali|Roboto&display=swap');
 .Input {
   background: white;
   color:black;
@@ -10,20 +11,26 @@
   text-align: left;
 
 }
+.paleText {
+  color:rgba(0, 0, 0, 0.42);
+}
 
 .r0 {
 padding: 0.3em 0 0.3em 25px;
 text-indent: -25px;
+
 }
 label:hover {
   cursor: pointer;
 }
 label {
-  color:rgba(0, 0, 0, 0.87);
-    font-size:10.0pt;
   
+   
+  color:rgba(20, 20, 20, 0.822);
+    font-size:12.0pt;
 }
 p {
-  color:rgba(0, 0, 0, 0.87);
-  font-size:10.0pt;
+  color:rgba(20, 20, 20, 0.822);
+  font-size:12.0pt;
+  font-family: 'Roboto';
 }

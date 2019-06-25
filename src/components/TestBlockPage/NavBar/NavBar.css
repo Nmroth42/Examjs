@@ -1,30 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Mali|Roboto&display=swap');
 .navBar{
 
   border-radius: 4px;
 text-align: left;
 
-  
+font-family: 'Roboto';
  margin:15px;
 display:flex;
 justify-content: space-between ;
  padding:7px;
- background:white;
- border: 1px solid rgba(77, 73, 73, 0.158);
+ background:rgba(252, 249, 249, 0.63);
+ border-bottom: 1px solid rgba(77, 73, 73, 0.158);
 }
 a {
   color:white;
 }
-button {
- color:rgb(54, 49, 49);
- background:white;
+.button {
+  font-family: 'Roboto';
+ color:rgba(34, 28, 12, 0.76);
+ background:none;
  box-shadow:none;
  padding:4px;
+ font-style: normal;
  border:none;
+ padding:10px;
+ text-decoration: none;
  margin:2px;
+ 
+font-weight: 400;
+ font-size: 1.2em;
 }
-button:hover {
+.button_2 {
+  font-family: 'Roboto';
+ color:rgba(34, 28, 12, 0.568);
+ background:none;
+ box-shadow:none;
+ padding:4px;
+ font-style: normal;
+ border:none;
+ padding:2px;
+ padding-top:10px; 
+ 
+ text-decoration: none;
+ margin:2px;
+ 
+font-weight: 400;
+ font-size: 1.2em;
+}
+.button:hover {
   cursor: pointer;
-  
+  color:rgba(59, 52, 32, 0.623);
 }
 
 
