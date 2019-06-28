@@ -1,8 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Mali|Roboto&display=swap');
 .white_btn {
-  background: white;
-  color:black;
+  font-family: 'Roboto';
+  color:rgba(34, 28, 12, 0.76);
+  background:none;
+  box-shadow:none;
+  padding:4px;
+  font-style: normal;
+  border:none;
+  padding:10px;
+  text-decoration: none;
+  margin:2px;
+  background:rgba(252, 249, 249, 0.63);
+ border-bottom: 1px solid rgba(77, 73, 73, 0.158);
+ font-weight: 400;
+  font-size: 1.2em;
+  border-radius: 4px;
 }
 .white_btn:hover {
-  background:white;
+  
+    cursor: pointer;
+    color:rgba(59, 52, 32, 0.623);
+  
   
 }

@@ -12,6 +12,21 @@
     justify-content: center;
    margin-bottom:25px;
 }
+.desc_test {
+  margin:15px;
+  color:rgba(20, 20, 20, 0.466);
+  
+}
+.upper_wrap {
+  height: 170px;
+  background: rgba(233, 233, 233, 0.575);
+  position: relative;
+  width: 100%;
+  }
+  .main_page {
+    position: relative;
+    margin-top:-70px;
+  }
   @media screen and (max-width: 740px) {
     .testBlock_wrapper  {
       
@@ -42,8 +57,8 @@
   @media screen and (max-width: 740px) {
     .main_item {
       width: 100vw;
-      padding: 0px;
-      margin: 0px;
+      /* padding: 0px;
+      margin: 0px; */
     }
 
     .testBlocks {

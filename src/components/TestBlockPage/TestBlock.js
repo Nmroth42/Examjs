@@ -7,23 +7,34 @@ import ScrollButton from "./ScrollToTopBtn/Btn";
 import TestServices from '../../services/TestsServices'
 // import AnswerDataProvider from './AnswerDataContext'
 import {connect} from 'react-redux'
-
+import Header from "../Header/Header";
 
 class TestBlock extends Component {
   state = {
-    questions: []
+    questions: [],
+    test:{
+      number:null,
+      category:null
+    }
   }
 
   //  val = useContext(AnswerDataContext)
-  
-  async componentDidMount() {
+  componentWillUnmount() {
     this.props.clearAnswers()
+  }
+  async componentDidMount() {
+   
     console.log(this.props);
    console.log(this.props.match.params.id);
    if (this.props.match.params.id) {
-    const questions = (await TestServices.getQuestions(this.props.match.params.id)).data;
+    const questions = (await TestServices.getQuestions(this.props.match.params.id)).data.questions;
+    const test = (await TestServices.getQuestions(this.props.match.params.id)).data.test;
+    this.setState({test:{
+      number:test[0].number,
+      category:test[0].category
+    }})
     this.setState({questions: questions})
-    console.log(questions)
+    console.log(this.state.test.number)
 
     this.props.onAddQuestionsLength(this.state.questions.length)
    }
@@ -54,16 +65,22 @@ class TestBlock extends Component {
 
 render() {
   return (
-     
+    <div >
+   
+     <Header text='Solve the test'/>
+
+          <div className={classes.main_page}  >
     <div className={classes.TestBlock}>
-    
+   
 <div className={classes.main_container}> 
 
 <div   className={classes.main_item} > 
 
-   
+
       <NavBar/>
-      
+      <div className={classes.desc_test}>
+      {this.state.test.category} - Test №{this.state.test.number}
+      </div>
       { this.questions() }
      
 
@@ -75,6 +92,8 @@ render() {
     </div>
 
     </div>
+    </div> 
+        </div>
         </div>
       
 

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import classes from "./ResultTestItem.css";
 import {connect} from 'react-redux'
 
+
 class ResultTestItem extends Component {
   state = {
     
@@ -17,22 +18,25 @@ class ResultTestItem extends Component {
 render() {
   return (
     <div className={classes.testBlock}>
-    
+     <span className={classes.paleText}>№{this.props.number}</span>
+  
     <p>
     {this.props.text}
     </p>
    
-   {this.props.var1}
+  1.{this.props.var1}
    <br/>
-   {this.props.var2}
+   2.{this.props.var2}
    <br/>
-   {this.props.var3}
+   3.{this.props.var3}
    <br/>
-   Your answer{this.props.chosenAnsw}
    <br/>
-   {this.props.number}
+   Your answer: {this.props.chosenAnsw} <br/>
+   Rigth answer: {this.props.rightAnsw}
    <br/>
-   Rigth answer{this.props.rightAnsw}
+   <br/>
+   <div className={classes.explainBlock} >
+   Explanation:</div>
  
   
 

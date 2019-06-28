@@ -23,6 +23,39 @@ text-indent: -25px;
 label:hover {
   cursor: pointer;
 }
+[type="radio"] {
+   border: 0;  
+  
+  display: none;
+ 
+}
+[type="radio"]:checked + span:before {
+  background:  #fa848498;
+  /* box-shadow: 0 0 0 0.1em rgb(167, 135, 135);  */
+  /* border:1px solid rgba(21, 22, 22, 0.164) ; */
+}
+[type="radio"]:focus + span:after {
+  content: '\00AB';
+  margin-left: 0.3em;
+  /* font-size: 1.5em;
+  line-height: 1;
+   margin-right: 0.75em;
+  vertical-align: -0.125em; */
+  color: #d6303098;
+}
+[type="radio"] + span:before {
+  content: '';
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  /* vertical-align: -0.26em; */
+  border-radius: 0em;
+  /* border: 0.125em solid rgba(161, 161, 161, 0.432); */
+  /* box-shadow: 0 0 0 0.1em rgb(167, 135, 135); */
+  border:1px solid rgba(117, 99, 99, 0.384);
+  margin-right: 0.75em;
+  transition: 0.5s ease all;
+}
 label {
   
    

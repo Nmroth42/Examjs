@@ -6,10 +6,23 @@
     flex-direction: column;
     align-items:center;
   }
-
+  .mainText {
+    color:rgba(34, 28, 12, 0.76);
+    font-size: 1.2em;
+  }
 a {
     color:black;
 }
+.upper_wrap {
+  height: 170px;
+  background: rgba(233, 233, 233, 0.575);
+  position: relative;
+  width: 100%;
+  }
+  .main_page {
+    position: relative;
+    margin-top:-70px;
+  }
   .main_item {
     border-radius: 4px;
     margin: 25px;
@@ -24,8 +37,8 @@ a {
   @media screen and (max-width: 740px) {
     .main_item {
       width: 100vw;
-      padding: 0px;
-      margin: 0px;
+      /* padding: 0px;
+      margin: 0px; */
     }
 
     .testBlocks {

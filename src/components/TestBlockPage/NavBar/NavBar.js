@@ -32,6 +32,9 @@ class navBar extends React.Component{
       this.togglePopup()
     }
     else {
+      const jsonArrayAnswers = await this.props.answers
+      const buf = await TestServices.postAnswers(jsonArrayAnswers)
+      this.props.onAddResultData(buf.data)
       this.props.history.push('/result')
     console.log( this.props.history)
     console.log( this.props.answers.length)
@@ -67,7 +70,7 @@ class navBar extends React.Component{
 
       <Link to="/" className={classes.button}>
        
-          Main
+          Back
        
       </Link>
       {/* {this.store.answers_length} */}

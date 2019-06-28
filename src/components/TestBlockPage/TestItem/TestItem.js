@@ -36,7 +36,7 @@ class TestItem extends Component {
 render() {
   return (
     <div className={classes.testBlock}>
-     <div className={classes.paleText}>№{this.props.index} </div>
+     <span className={classes.paleText}>№{this.props.index} </span>
     <p>
     {this.props.question}
     </p>
@@ -45,19 +45,25 @@ render() {
 
     <div className={classes.r0}>
     <input onClick={event => this.handleDestination(event)} type="radio" idTask={this.props.taskId} number={this.props.index} id={this.props.taskId+'_answ1'} className={classes.Input} name="answer" value="1"/>
+    <span>
     <label for={this.props.taskId+'_answ1'}>{this.props.answ1}</label>
+    </span>
     <br/>
     </div>
 
     <div className={classes.r0}>
     <input  onClick={event => this.handleDestination(event)} type="radio"  idTask={this.props.taskId} number={this.props.index} id={this.props.taskId+'_answ2'} className={classes.Input} name="answer" value="2"/>
+    <span>
     <label for={this.props.taskId+'_answ2'}>{this.props.answ2}</label>
+    </span>
     <br/>
     </div>
 
     <div className={classes.r0}>
     <input onClick={event => this.handleDestination(event)} type="radio"  idTask={this.props.taskId} number={this.props.index}  id={this.props.taskId+'_answ3'} className={classes.Input} name="answer" value="3"/>
+    <span>
     <label for={this.props.taskId+'_answ3'}>{this.props.answ3}</label>
+    </span>
     <br/>
     </div>
  

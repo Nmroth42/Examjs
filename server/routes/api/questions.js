@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose')
-
+const Tests = require('../../models/Tests') 
 const Questions = require('../../models/Questions') 
 
 const q1 = new Questions({
@@ -37,12 +37,17 @@ const q1 = new Questions({
     async show (req, res) {
         try {
           const questions = await Questions.find({idTest: req.params.testId})
+          const test = await Tests.find({_id: req.params.testId})
           questions.map((name, index)  => {
             console.log(name.answer)
             //отправка без ответа
             name.answer = 0   
           })
-          res.send(questions)
+          const result = {
+            questions:questions,
+            test:test
+          }
+          res.send(result)
           console.log(questions) 
           // console.log(questions)
         } catch (err) {
@@ -108,7 +113,7 @@ const q1 = new Questions({
         // res.send(questions.toJSON())
         // console.log(req.body)
         // console.log(questions)
-        const jsonArrayQuestions= JSON.parse(JSON.stringify(questions))
+        // const jsonArrayQuestions= JSON.parse(JSON.stringify(questions))
         const result = {
           arrayAnsw: wideResult,
           countRigthAnsw: countRigthAnsw,

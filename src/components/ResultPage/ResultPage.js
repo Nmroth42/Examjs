@@ -6,6 +6,7 @@ import classes from "./ResultPage.css";
 import TestServices from '../../services/TestsServices'
 import {connect} from 'react-redux'
 import ResultTestItem from "./ResultTestItem/ResultTestItem";
+import Header from "../Header/Header";
 
 
 class ResultPage extends Component {
@@ -18,9 +19,9 @@ class ResultPage extends Component {
   }
   state = {
     result: {},
-    arrayAnsw:[]
+    arrayAnsw:undefined
     }
- async componentDidMount() {
+  componentDidMount() {
   // const jsonArrayResult = JSON.parse(JSON.stringify(this.props.resultData))
     // this.state.result = this.props.resultData
     // console.log('mount')
@@ -29,33 +30,49 @@ class ResultPage extends Component {
     // console.log(this.props.resultData)
 
 
-    const jsonArrayAnswers = await this.props.answers
-    const buf = await TestServices.postAnswers(jsonArrayAnswers)
-    this.setState({result: buf.data})
+    // const jsonArrayAnswers = await this.props.answers
+    // const buf = await TestServices.postAnswers(jsonArrayAnswers)
+    // this.setState({result: buf.data})
     // this.state.result = buf.data
     // console.log('test mount')
     // console.log(jsonArrayAnswers)
     // console.log( this.state.result.countTasks)
     // this.props.onAddResultData(this.state.result)
-     this.setState({arrayAnsw: this.state.result.arrayAnsw})
+    //  this.setState({result: buf.data})
+    this.setState({result:  this.props.resultData})
+    // this.setState({arrayAnsw: undefined})
+    if (this.props.resultData.arrayAnsw !== undefined) {
+  this.setState({arrayAnsw:   this.props.resultData.arrayAnsw.sort(function(a, b) {
+      return parseFloat(a.number) - parseFloat(b.number);
+      
+      
+  })})
+}
+     
+
+    //  this.setState(
+       
+    //  )
     //  this.state.arrayAnsw = this.state.result.arrayAnsw
+  
+    window.scrollTo(0, 0);
      console.log('sdsdsd')
      console.log(this.state.result)
      console.log(this.state.arrayAnsw)
-  
+     if (this.state.arrayAnsw !== undefined ) {
+       
+     }
     // this.props.onAddResultData(buf.data)
  
   }
-  results = () => this.state.arrayAnsw.map((name, index)  => {
-    
+ resultMain = () => {
    
+ }
+results = () => { if  (this.state.arrayAnsw !== undefined) {return this.state.arrayAnsw.map((name, index)  => {
     return (
-      
       <div className={classes.testBlock_wrapper}>
         {/* переделать */}
-        
         <ResultTestItem
-          
           text={name.text}
           var1={name.var1}
           var2={name.var2}
@@ -68,13 +85,18 @@ class ResultPage extends Component {
     // </li>
    
     )
-   
-   
-  } )
+  } )} else {
+    return (
+    <div>It looks like your answers are empty.</div>
+    )
+  }
+}
   
   render() {
     return (
-     
+   
+      <div >
+        <Header text='Result'/>
       
         <div className={classes.main_page}  >
         <div className={classes.main_container}> 
@@ -82,10 +104,19 @@ class ResultPage extends Component {
 
             <div className={classes.content} >
 
-     <div  onClick={event => this.handleFinishG(event)} >pppp  </div>   
-     Your result: {(this.state.result.countRigthAnsw / this.props.questions_length)*100}%<br/> 
-     { this.results() }
-      
+     <div  onClick={event => this.handleFinishG(event)} > </div>  
+     {this.state.arrayAnsw !== undefined ?
+     <div>
+      <div className={classes.mainText}> Your result: {(this.state.result.countRigthAnsw / this.props.questions_length)*100}%<br/> </div> 
+    
+   
+       
+       </div>
+      : null
+    }  
+    { this.results() }
+   
+    </div> 
       
             </div>
           </div>
