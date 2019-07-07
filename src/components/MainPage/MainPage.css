@@ -1,9 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Mali|Roboto&display=swap');
 .test_chose_wrapper {
-  color:rgba(34, 28, 12, 0.76);
-    padding-bottom: 5px;
-  
+
+
 }
 .test_chose_wrapper > li {
   padding-bottom: 2px;
@@ -13,45 +12,41 @@
     flex-direction: column;
     align-items:center;
     font-family: 'Roboto';
-    color:rgba(34, 28, 12, 0.76);
+
     font-size: 1.2em;
   }
-  .header {
-    font-family: 'Roboto';
-    color:rgba(34, 28, 12, 0.589);
-    font-size: 23px;
-  }
-.upper_wrap {
-height: 170px;
-background: rgba(233, 233, 233, 0.575);
-position: relative;
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items:center;
-line-height: 120px;
-}
 .main_wrap {
   position: relative;
   margin-top:-70px;
 }
+.paleText {
+  color:rgba(0, 0, 0, 0.42);
+  margin:25px;
+}
+.content {
+  padding: 20px;
+}
+
+
 a {
-    font-size: 0.9em;
+    font-size: 16px;
+
 }
   .main_item {
+
     border-radius: 4px;
     margin: 25px;
     width: 50vw;
-    padding: 25px;
+    /* padding: 25px; */
     /* border: 1px solid rgba(77, 73, 73, 0.158); */
     background: white;
   }
- 
+
 
   @media screen and (max-width: 740px) {
     .main_item {
       width: 100vw;
-     
+
     }
 
     .testBlocks {
@@ -60,5 +55,6 @@ a {
     }
     .content {
         padding: 20px;
+        padding-top:0px;
     }
 }

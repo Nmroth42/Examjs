@@ -1,0 +1,34 @@
+{
+  "react_questions": [
+    {
+      "_id": "later",
+      "text": "what is React?",
+      "var1": "UI component library",
+      "var2": "Javascript framework",
+      "var3": "Css framework",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "It’s a UI component library. The UI components are created with React using JavaScript, not a special template language. This approach is called creating composable UIs, and it’s fundamental to React’s philosophy."
+    },
+    {
+      "_id": "later",
+      "text": "DOM diffing is:",
+      "var1": "UI component library",
+      "var2": "javascript framework",
+      "var3": "Process of finding differences between what’s already in the browser and the new view",
+      "idTest": "later",
+      "answer": 3,
+      "explanation": "It’s a UI component library. The UI components are created with React using JavaScript, not a special template language. This approach is called creating composable UIs, and it’s fundamental to React’s philosophy."
+    },
+    {
+      "_id": "later",
+      "text": "Does React uses two-way data binding or directives?",
+      "var1": "Yes",
+      "var2": "No",
+      "var3": "Only two-way data binding",
+      "idTest": "later",
+      "answer": 2,
+      "explanation": "It’s a UI component library. The UI components are created with React using JavaScript, not a special template language. This approach is called creating composable UIs, and it’s fundamental to React’s philosophy."
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "javascript_questions": [
+    {
+      "_id": "later",
+      "text": "Each browser has a JS Runtime Environment. In the environment are Web API’s that a developer can access to build a program. What is not included in the Browser API?",
+      "var1": "DOM",
+      "var2": "Events",
+      "var3": "Call stack",
+      "idTest": "later",
+      "answer": 3,
+      "explanation": "Call stack - it is part of the JS Engine. Once browser receives javascript code or scripts on the web page the JS Engine starts parsing it. First, it will partially parse the code checking for syntax errors. If it finds none, it starts reading the code  from top to bottom. Its ultimate goal is to turn the javascript code into machine code that the computer can understand."
+    },
+    {
+      "_id": "later",
+      "text": "You can use console.time('example') and console._ ( '_' means placeholder) for:",
+      "var1": "Performance analysis",
+      "var2": "Testing",
+      "var3": "Debugging",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "You can use console.time('example') and console.timeEnd('example') to collect performance information."
+    },
+    {
+      "_id": "later",
+      "text": "The primary global object that the browser exposes to the JavaScript engine is:",
+      "var1": "Virtual DOM object",
+      "var2": "BOM object",
+      "var3": "Window object",
+      "idTest": "later",
+      "answer": 3,
+      "explanation": "The window object is the global object through which all other global objects, global variables (even user-defined ones), and browser API s are accessible. One of the most important properties of the global window object is the document, which represents the DOM of the current page.\n\nThe BOM is the Browser Object Model, which deals with browser components aside from the document, like history, location, navigator and screen (as well as some others that vary by browser)."
+    },
+    {
+      "_id": "later",
+      "text": "Which execution model is used in browser execution environment?",
+      "var1": "Single-threaded model",
+      "var2": "Multi-threding model",
+      "var3": "Separate-threads model",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "The browser execution environment is, at its core, based on the idea that only a single piece of code can be executed at once: the so-called single-threaded execution model.For this reason,the browser needs a way to keep track of the events that have occurred but have yet to be processed. To do this, the browser uses an event queue"
+    },
+    {
+      "_id": "later",
+      "text": "What statement is false? In javascript objects enjoy certain capabilities:",
+      "var1": "They can be created via literals: {}",
+      "var2": "They can possess properties that can be dynamically created and assigned",
+      "var3": "They can't be returned as values from functions",
+      "idTest": "later",
+      "answer": 3,
+      "explanation": "In JavaScript we can do almost the exact same things with functions also. Whatever we can do with objects, we can do with functions as well. Functions are objects, just with an additional, special capability of being invokable: Functions can be called or invoked in order to perform an action."
+    },
+    {
+      "_id": "later",
+      "text": "The 'this' parameter refers to:",
+      "var1": "Object that’s associated with the function invocation",
+      "var2": "Window object",
+      "var3": "Function property",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "The this parameter, a vital ingredient in object-oriented JavaScript, refers to an object that’s associated with the function invocation. For this reason, it’s often termed the function context."
+    },
+    {
+      "_id": "later",
+      "text": "Invoking a function as a constructor is a powerful feature of JavaScript:",
+      "var1": "When calling a function with a keyword new, you can access any data from function",
+      "var2": "When calling a function with a keyword new, a new empty object is created and set as the context of the constructor function, the 'this' parameter",
+      "var3": "It give more powerful way to encapsulate data",
+      "idTest": "later",
+      "answer": 2,
+      "explanation": "The purpose of a constructor is to cause a new object to be created, to set it up, and to return it as the constructor value. Anything that interferes with that intent isn’t appropriate for constructors."
+    },
+    {
+      "_id": "later",
+      "text": "Apply and Call methods need to:",
+      "var1": "Reuse some data from function",
+      "var2": "Explicitly specify any object we want as the function context",
+      "var3": "Encapsulate data",
+      "idTest": "later",
+      "answer": 2,
+      "explanation": "To invoke a function by using its apply method, we pass two parameters to apply: the object to be used as the function context, and an array of values to be used as the invocation arguments. The call method is used in a similar manner, except that the arguments are passed directly in the argument list rather than as an array."
+    },
+    {
+      "_id": "later",
+      "text": "Arrow functions don’t have their own 'this' value.Then from where functions get the value of 'this'",
+      "var1": "Arrow functions embrace all 'this' from a higher execution scopes",
+      "var2": "Arrow functions remember the value of the 'this' parameter at the time of their definition",
+      "var3": "Arrow functions embrace all 'this' from a lower execution scope",
+      "idTest": "later",
+      "answer": 2,
+      "explanation": "Arrow functions pick up the value of the this parameter at the moment of their creation."
+    },
+    {
+      "_id": "later",
+      "text": "When invoking a function, in addition to the parameters explicitly stated in the function definition, function invocations are passed in two implicit parameters:",
+      "var1": "'call' and 'bind'",
+      "var2": "'arguments' and 'this'",
+      "var3": "'bind' and 'super'",
+      "idTest": "later",
+      "answer": 2,
+      "explanation": "JavaScript functions have a built-in object called the arguments object.The argument object contains an array of the arguments used when the function was called (invoked)."
+    },
+    {
+      "_id": "later",
+      "text": "Let and const keywords define variables in:",
+      "var1": "Only in global lexical environment  ",
+      "var2": "Only in closest lexical environment",
+      "var3": "closest lexical environment or global lexical environment ",
+      "idTest": "later",
+      "answer": 3,
+      "explanation": "Unlike var, which defines the variable in the closest function or global lexical environment, the let and const keywords are more straightforward. They define variables in the closest lexical environment (which can be a block environment, a loop environment, a function environment, or even the global environment). We can use let and const to define block-scoped, function-scoped, and global-scoped variables."
+    },
+    {
+      "_id": "later",
+      "text": "How can you achieve the implementation of private variables ",
+      "var1": "Using function closures",
+      "var2": "By adding an access modifier",
+      "var3": "No way",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "Closures allow a function to access all variables that are in scope when the function itself was defined. They create a “safety bubble” of the function and the variables that are in scope at the point of the function’s definition. This way, the function has all it needs to execute, even if the scope in which the function was created is long gone. Closures are merely a side effect of JavaScript scoping rules. A function can be called even when the scope in which it was created is long gone."
+    },
+    {
+      "_id": "later",
+      "text": "Callning a generator doesn’t execute the generator function. Instead it creates an object called an _ ( '_' means placeholder).",
+      "var1": "Iterator",
+      "var2": "Generic",
+      "var3": "callback",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "Making a call to a generator doesn’t mean that the body of the generator function will be executed. Instead, an iterator object is created, an object through which we can communicate with the generator.The iterator is used to control the execution of the generator. One of the fundamental things that the iterator object exposes is the 'next' method, which we can use to conntrol the generator by requesting a value from it."
+    },
+    {
+      "_id": "later",
+      "text": "Can we achieve two-way communication with generators?. Can We send data to a generator?  ",
+      "var1": "Yes, through parameter",
+      "var2": "No",
+      "var3": "Yes, through inheritance",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "A generator can receive standard arguments, like any other function."
+    },
+    {
+      "_id": "later",
+      "text": "As the JS Engine comes across variables and function declarations in the code it stores them in the memory. What is name of this memory?",
+      "var1": "Stack",
+      "var2": "Heap",
+      "var3": "Queue",
+      "idTest": "later",
+      "answer": 2,
+      "explanation": "Memory Heap — this is where the memory allocation happens. Call Stack — this is where your stack frames are as your code executes"
+    },
+    {
+      "_id": "later",
+      "text": "Can Javascript run asynchronously in the browser?",
+      "var1": "Yes",
+      "var2": "No",
+      "var3": "Yes, but only on desktop device",
+      "idTest": "later",
+      "answer": 2,
+      "explanation": "At any time a callback function can be added to the Queue after an action is triggered from the Web API container.This is what they mean when they say Javascript can run asynchronously.It isn’t actually true, it just seems true. Javascript can only ever execute one function at a time, whatever is at top of the stack, it is a synchronous language. But because the Web API container can forever add callbacks to the queue, and the queue can forever add those callbacks to the stack, we think of javascript as being asynchronous. "
+    },
+    {
+      "_id": "later",
+      "text": "One form of code reuse that also helps organize our programs is inheritance, extending the features of one object into another. In JavaScript, inheritance is implemented with:",
+      "var1": "prototyping.",
+      "var2": "hoisting",
+      "var3": "classes",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "The idea of prototyping is simple. Every object can have a reference to its prototype, an object to which the search for a particular property can be delegated to, if the object itself doesn’t have that property.Every object can have a reference to a prototype, an object to which we delegate the search for a particular property, if the object itself doesn’t have the searched-for property. An object’s prototype can have its own prototype, and so on, forming a prototype chain."
+    },
+    {
+      "_id": "later",
+      "text": "Javascript have methods like push and pop, shift and unshift.What methods are best used in conjunction in terms of speed of execution",
+      "var1": "push and pop",
+      "var2": "unshift and shift",
+      "var3": "push and shift",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "The pop and push methods only affect the last item in an array: pop by removing the last item, and push by inserting an item at the end of the array. On the other hand, the shift and unshift methods change the first item in the array. This means the indexes of any subsequent array items have to be adjusted. For this reason, push and pop are significantly faster operations than shift and unshift."
+    },
+    {
+      "_id": "later",
+      "text": "Javascript have methods like push and pop, shift and unshift.What methods are best used in conjunction in terms of speed of execution",
+      "var1": "push and pop",
+      "var2": "unshift and shift",
+      "var3": "push and shift",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "The pop and push methods only affect the last item in an array: pop by removing the last item, and push by inserting an item at the end of the array. On the other hand, the shift and unshift methods change the first item in the array. This means the indexes of any subsequent array items have to be adjusted. For this reason, push and pop are significantly faster operations than shift and unshift."
+    }
+  ]
+}

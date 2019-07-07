@@ -9,17 +9,15 @@
   .mainText {
     color:rgba(34, 28, 12, 0.76);
     font-size: 1.2em;
+   
   }
 a {
     color:black;
 }
-.upper_wrap {
-  height: 170px;
-  background: rgba(233, 233, 233, 0.575);
-  position: relative;
-  width: 100%;
-  }
-  .main_page {
+.content {
+  padding: 20px;
+}
+  .main_wrap {
     position: relative;
     margin-top:-70px;
   }
@@ -27,12 +25,57 @@ a {
     border-radius: 4px;
     margin: 25px;
     width: 50vw;
-    padding: 25px;
+  
     /* border-left: 1px solid rgba(77, 73, 73, 0.158);
     border-right: 1px solid rgba(77, 73, 73, 0.158); */
     background: white;
   }
+  @import url('https://fonts.googleapis.com/css?family=Mali|Roboto&display=swap');
+  .white_btn {
+    font-family: 'Roboto';
+    color:rgba(34, 28, 12, 0.76);
+    background:none;
+    box-shadow:none;
+    padding:4px;
+    font-style: normal;
+    border:none;
+    padding:10px;
+    display: block;
+    text-decoration: none;
+    margin:2px;
+    background:rgba(252, 249, 249, 0.63);
+   border: 1px solid rgba(141, 101, 101, 0.056);
+   font-weight: 400;
+    font-size: 1.2em;
+    float:right;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 4px;
+  }
+
  
+
+  .top_panel {
+    display:flex;
+    justify-content: center;
+   margin-top:25px;
+   background: rgba(253, 219, 219, 0.52);
+}
+
+.bottom_pannel{
+  display:flex;
+  justify-content: center;
+
+ 
+}
+  .white_btn:hover {
+    
+      cursor: pointer;
+      color:rgba(59, 52, 32, 0.623);
+    
+    
+  }
 
   @media screen and (max-width: 740px) {
     .main_item {

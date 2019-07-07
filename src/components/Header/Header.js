@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-// import "./Header.css";
+import { Link } from "react-router-dom";
 import classes from "./Header.css";
-class Header extends Component {
-    render() {
-        return (
-         
-            <div className={classes.upper_wrap}>
-              <div className={classes.header}>{this.props.text} </div>
-             
-            </div>
-            )
-            }
 
+class Header extends Component {
+  render() {
+    return (
+      <div className={classes.main_container}>
+        <div className={classes.main_item}>
+          <Link className={classes.content} to={"/main"}>
+            ExamJS
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
 export default Header;

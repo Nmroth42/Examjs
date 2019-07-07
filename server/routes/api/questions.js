@@ -61,6 +61,7 @@ const q1 = new Questions({
         const answers = req.body
         const questions = []
         const wideResult = []
+        //использовать редюсер?
         var countRigthAnsw = 0
         var countTasks = 0
         try {  

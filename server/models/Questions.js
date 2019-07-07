@@ -7,6 +7,7 @@ const questionSchema = new mongoose.Schema({
     var2: String,
     var3: String,
     idTest:String,
+    explanation:String,
     answer:Number
 })
 

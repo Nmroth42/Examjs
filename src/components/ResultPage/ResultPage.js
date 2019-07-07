@@ -1,145 +1,157 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./ResultPage.css";
-import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
-import axios from 'axios'
 import classes from "./ResultPage.css";
-import TestServices from '../../services/TestsServices'
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import ResultTestItem from "./ResultTestItem/ResultTestItem";
+import Drift from "../Drift/Drift";
 import Header from "../Header/Header";
-
+import ScrollButton from "./ScrollToTopBtn/Btn";
+import { Beforeunload } from "react-beforeunload";
+// import PageProgress from 'react-page-progress'
 
 class ResultPage extends Component {
-   handleFinishG(event) {
-    // this.props.onAddResultData(this.state.result)
-    // console.log(this.props.resultData.arrayAnsw)
-    // console.log(this.props.answers)
-    console.log(this.state.result.arrayAnsw[0])
-    
+  handleFinishG(event) {
+    console.log(this.state.result.arrayAnsw[0]);
   }
   state = {
     result: {},
-    arrayAnsw:undefined
+    arrayAnsw: undefined,
+    test: {
+      number: null,
+      category: null
     }
-  componentDidMount() {
-  // const jsonArrayResult = JSON.parse(JSON.stringify(this.props.resultData))
-    // this.state.result = this.props.resultData
-    // console.log('mount')
-    // // Object.assign(this.state.result, this.props.resultData);
-    // console.log(this.state.result )
-    // console.log(this.props.resultData)
+  };
 
-
-    // const jsonArrayAnswers = await this.props.answers
-    // const buf = await TestServices.postAnswers(jsonArrayAnswers)
-    // this.setState({result: buf.data})
-    // this.state.result = buf.data
-    // console.log('test mount')
-    // console.log(jsonArrayAnswers)
-    // console.log( this.state.result.countTasks)
-    // this.props.onAddResultData(this.state.result)
-    //  this.setState({result: buf.data})
-    this.setState({result:  this.props.resultData})
-    // this.setState({arrayAnsw: undefined})
-    if (this.props.resultData.arrayAnsw !== undefined) {
-  this.setState({arrayAnsw:   this.props.resultData.arrayAnsw.sort(function(a, b) {
-      return parseFloat(a.number) - parseFloat(b.number);
-      
-      
-  })})
-}
-     
-
-    //  this.setState(
-       
-    //  )
-    //  this.state.arrayAnsw = this.state.result.arrayAnsw
-  
+  async componentDidMount() {
     window.scrollTo(0, 0);
-     console.log('sdsdsd')
-     console.log(this.state.result)
-     console.log(this.state.arrayAnsw)
-     if (this.state.arrayAnsw !== undefined ) {
-       
-     }
-    // this.props.onAddResultData(buf.data)
- 
+    // const jsonArrayResult = JSON.parse(JSON.stringify(this.props.resultData))
+    this.setState({ result: this.props.resultData });
+    this.setState({ testTitles: this.props.test_titles });
+    this.setState({
+      test: {
+        number: this.props.test_titles.number,
+        category: this.props.test_titles.category
+      }
+    });
+
+    console.log("ddd");
+    console.log(this.props.test_titles);
+    if (this.props.resultData.arrayAnsw !== undefined) {
+      this.setState({
+        arrayAnsw: this.props.resultData.arrayAnsw.sort(function(a, b) {
+          return parseInt(a.number) - parseInt(b.number);
+        })
+      });
+    }
+    //   const test = (await TestServices.getOneTestTitles(this.props.match.params.id))
+    //   .data;
+    // this.setState({
+    //   test: {
+    //     number: test[0].number,
+    //     category: test[0].category
+    //   }
+    // });
   }
- resultMain = () => {
-   
- }
-results = () => { if  (this.state.arrayAnsw !== undefined) {return this.state.arrayAnsw.map((name, index)  => {
-    return (
-      <div className={classes.testBlock_wrapper}>
-        {/* переделать */}
-        <ResultTestItem
-          text={name.text}
-          var1={name.var1}
-          var2={name.var2}
-          var3={name.var3}
-          number={name.number}
-          chosenAnsw={name.chosenAnsw}
-          rightAnsw={name.rightAnsw}/></div>
-    // <li onClick={() => this.ClickTestHandler(index)}  key={name._id}> 
-    // {name._id}, Test №{name.number}
-    // </li>
-   
-    )
-  } )} else {
-    return (
-    <div>It looks like your answers are empty.</div>
-    )
-  }
-}
-  
+  results = () => {
+    if (this.state.arrayAnsw !== undefined) {
+      return this.state.arrayAnsw.map((name, index) => {
+        return (
+          <div className={classes.testBlock_wrapper}>
+            <ResultTestItem
+              text={name.text}
+              var1={name.var1}
+              var2={name.var2}
+              var3={name.var3}
+              number={name.number}
+              chosenAnsw={name.chosenAnsw}
+              rightAnsw={name.rightAnsw}
+              explanation={name.explanation}
+            />
+          </div>
+        );
+      });
+    } else {
+      return <div>It looks like your answers are empty.</div>;
+    }
+  };
+
   render() {
     return (
-   
-      <div >
-        <Header text='Result'/>
-      
-        <div className={classes.main_page}  >
-        <div className={classes.main_container}> 
-           <div   className={classes.main_item} > 
-
-            <div className={classes.content} >
-
-     <div  onClick={event => this.handleFinishG(event)} > </div>  
-     {this.state.arrayAnsw !== undefined ?
-     <div>
-      <div className={classes.mainText}> Your result: {(this.state.result.countRigthAnsw / this.props.questions_length)*100}%<br/> </div> 
-    
-   
-       
-       </div>
-      : null
-    }  
-    { this.results() }
-   
-    </div> 
-      
+      <div>
+        {/* <PageProgress color={'#FBB4B4'} height={4}/> */}
+        <Header />
+        <Drift text="Result" />
+        <Beforeunload onBeforeunload={event => event.preventDefault()} />
+        <div className={classes.main_wrap}>
+          <div className={classes.main_container}>
+            <div className={classes.main_item}>
+              <div className={classes.content}>
+                {this.state.arrayAnsw !== undefined ? (
+                  <div className={classes.mainText}>
+                    {this.state.test.category} - Test №{this.state.test.number}{" "}
+                    <br />
+                    Your result:
+                    {parseInt(
+                      (this.state.result.countRigthAnsw /
+                        this.props.questions_length) *
+                        100
+                    )}
+                    %<br />{" "}
+                  </div>
+                ) : null}
+                {this.results()}
+              </div>
+              <div className={classes.top_panel}>
+                <Link to="/" className={classes.white_btn}>
+                  Take another test
+                </Link>
+              </div>
+              <br />
+              <div className={classes.bottom_pannel}>
+                <ScrollButton scrollStepInPx="40" delayInMs="16.66" />
+              </div>
+              <br />
             </div>
           </div>
         </div>
       </div>
-
-    )
-    
+    );
   }
 }
+
+// if (window.performance) {
+//   if (performance.navigation.type == 1) {
+//     alert( "This page is reloaded" );
+//   } else {
+//     alert( "This page is not reloaded");
+//   }
+// }
+// window.onbeforeunload = function (evt) {
+//   // var message = 'Are you sure you want to leave?';
+//   // // if (typeof evt == 'undefined') {
+//   // //   evt = window.event;
+//   // // }
+//   // // if (evt) {
+//   // //   evt.returnValue = message;
+//   // // }
+// return 1
+// }
 function mapStateToProps(state) {
   // const {resultData} = state
   return {
-  resultData:state.resultData,
-  answers: state.answers,
-  questions_length:state.questions_length
-  }
-   
- }
- const mapDispachToProps = dispatch => {
+    resultData: state.resultData,
+    answers: state.answers,
+    test_titles: state.currentTestTitles,
+    questions_length: state.questions_length
+  };
+}
+const mapDispachToProps = dispatch => {
   return {
-    onAddResultData: (data) => dispatch({ type: "ADD_RESULT", value: data }),
+    onAddResultData: data => dispatch({ type: "ADD_RESULT", value: data })
   };
 };
-export default connect(mapStateToProps, mapDispachToProps)(ResultPage);
-
+export default connect(
+  mapStateToProps,
+  mapDispachToProps
+)(ResultPage);

@@ -3,14 +3,33 @@
 
   border-radius: 4px;
 text-align: left;
-
+position: relative;
 font-family: 'Roboto';
  margin:15px;
 display:flex;
+
 justify-content: space-between ;
  padding:7px;
  background:rgba(252, 249, 249, 0.63);
  border-bottom: 1px solid rgba(77, 73, 73, 0.158);
+}
+.hide {
+  display:none;
+  /* background:rgba(255, 13, 13, 0.63);
+  position: fixed; */
+}
+.subNavBarLeft {
+  border-radius: 4px;
+  text-align: left;
+  display: block ;
+  font-family: 'Roboto';
+   margin:15px;
+ top:0px;
+  position:fixed;
+  justify-content: center ;
+   padding:7px;
+   background:rgba(252, 249, 249, 0.876);
+   border-bottom: 1px solid rgba(77, 73, 73, 0.158);
 }
 a {
   color:white;

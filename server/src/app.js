@@ -8,6 +8,8 @@ const path = require('path')
 const connectDB = require('../config/db')
 const mongoose = require('mongoose')
 
+// const {doIt} = require('../seed/sd')
+
 const TestController = require('../routes/api/questions')
 
 
@@ -33,14 +35,18 @@ app.options('*', cors());
 // })
 
 app.use('/', serveStatic(path.join(__dirname, '../../build')))
-app.use('/quiz', serveStatic(path.join(__dirname, '../../build')))
+// app.use('/quiz', serveStatic(path.join(__dirname, '../../build')))
 // app.use('/api/questions/:testId', require('../routes/api/questions'))
-app.use('/api/tests', require('../routes/api/tests'))
+
 // app.get('*', function (request, response){
 //   response.sendFile(path.join(__dirname, '../../build'))
 // })
-app.get('/api/questions/:testId', TestController.show)
-app.post('/api/answers', TestController.answers)
+// app.use('/api/tests', require('../routes/api/tests'))
+// app.get('/api/questions/:testId', TestController.show)
+// app.post('/api/answers', TestController.answers)
+
+require('./routes')(app)
+
 
 
 const port = process.env.PORT || 8080

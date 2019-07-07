@@ -1,5 +1,5 @@
 .testBlock_wrapper {
-    
+
     margin:15px;
       padding:15px;
     background:rgba(248, 243, 243, 0.205);
@@ -15,7 +15,7 @@
 .desc_test {
   margin:15px;
   color:rgba(20, 20, 20, 0.466);
-  
+
 }
 .upper_wrap {
   height: 170px;
@@ -23,13 +23,16 @@
   position: relative;
   width: 100%;
   }
-  .main_page {
+  .main_wrap {
     position: relative;
     margin-top:-70px;
   }
+  .content {
+  padding: 20px;
+}
   @media screen and (max-width: 740px) {
     .testBlock_wrapper  {
-      
+
     }
     .testBlocks {
         margin:0px;
@@ -43,13 +46,15 @@
     flex-direction: column;
     align-items:center;
   }
-
+.content {
+  padding: 20px;
+}
 
   .main_item {
     border-radius: 4px;
     margin: 25px;
     width: 50vw;
-    padding: 25px;
+    /* padding: 25px; */
     /* border: 1px solid rgba(77, 73, 73, 0.158); */
     background: white;
   }

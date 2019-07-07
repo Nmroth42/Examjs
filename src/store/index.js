@@ -6,7 +6,8 @@ const initialState = {
     answers:[],
     answers_length:0,
     resultData:{},
-    questions_length:0
+    questions_length:0,
+    currentTestTitles:{}
   
 }
 
@@ -80,6 +81,9 @@ const answReducer = (state = initialState, action) => {
         // return newState;
         return newState
         
+    }
+    if (action.type === 'ADD_CURRENT_TESR_TITLES') {
+        newState.currentTestTitles = (action.value)
     }
     
     return newState;
