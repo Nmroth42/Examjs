@@ -12,7 +12,7 @@ import { Beforeunload } from "react-beforeunload";
 
 class ResultPage extends Component {
   handleFinishG(event) {
-    console.log(this.state.result.arrayAnsw[0]);
+    // console.log(this.state.result.arrayAnsw[0]);
   }
   state = {
     result: {},
@@ -25,7 +25,6 @@ class ResultPage extends Component {
 
   async componentDidMount() {
     window.scrollTo(0, 0);
-    // const jsonArrayResult = JSON.parse(JSON.stringify(this.props.resultData))
     this.setState({ result: this.props.resultData });
     this.setState({ testTitles: this.props.test_titles });
     this.setState({
@@ -34,9 +33,6 @@ class ResultPage extends Component {
         category: this.props.test_titles.category
       }
     });
-
-    console.log("ddd");
-    console.log(this.props.test_titles);
     if (this.props.resultData.arrayAnsw !== undefined) {
       this.setState({
         arrayAnsw: this.props.resultData.arrayAnsw.sort(function(a, b) {
@@ -44,20 +40,12 @@ class ResultPage extends Component {
         })
       });
     }
-    //   const test = (await TestServices.getOneTestTitles(this.props.match.params.id))
-    //   .data;
-    // this.setState({
-    //   test: {
-    //     number: test[0].number,
-    //     category: test[0].category
-    //   }
-    // });
   }
   results = () => {
     if (this.state.arrayAnsw !== undefined) {
       return this.state.arrayAnsw.map((name, index) => {
         return (
-          <div className={classes.testBlock_wrapper}>
+          <div className={classes.testBlock_wrapper} key={index}>
             <ResultTestItem
               text={name.text}
               var1={name.var1}
@@ -107,10 +95,11 @@ class ResultPage extends Component {
                   Take another test
                 </Link>
               </div>
-              <br />
-              <div className={classes.bottom_pannel}>
-                <ScrollButton scrollStepInPx="40" delayInMs="16.66" />
-              </div>
+              {this.state.arrayAnsw !== undefined ? (
+                <div className={classes.bottom_pannel}>
+                  <ScrollButton scrollStepInPx="40" delayInMs="16.66" />
+                </div>
+              ) : null}
               <br />
             </div>
           </div>
@@ -120,25 +109,7 @@ class ResultPage extends Component {
   }
 }
 
-// if (window.performance) {
-//   if (performance.navigation.type == 1) {
-//     alert( "This page is reloaded" );
-//   } else {
-//     alert( "This page is not reloaded");
-//   }
-// }
-// window.onbeforeunload = function (evt) {
-//   // var message = 'Are you sure you want to leave?';
-//   // // if (typeof evt == 'undefined') {
-//   // //   evt = window.event;
-//   // // }
-//   // // if (evt) {
-//   // //   evt.returnValue = message;
-//   // // }
-// return 1
-// }
 function mapStateToProps(state) {
-  // const {resultData} = state
   return {
     resultData: state.resultData,
     answers: state.answers,

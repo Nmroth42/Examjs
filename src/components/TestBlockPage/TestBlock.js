@@ -7,10 +7,10 @@ import ScrollButton from "./ScrollToTopBtn/Btn";
 import TestServices from "../../services/TestsServices";
 import { connect } from "react-redux";
 import Drift from "../Drift/Drift";
+import { Beforeunload } from "react-beforeunload";
 import Header from "../Header/Header";
 // import PageProgress from 'react-page-progress'
-import {Waypoint} from 'react-waypoint';
-
+import { Waypoint } from "react-waypoint";
 
 class TestBlock extends Component {
   state = {
@@ -33,8 +33,9 @@ class TestBlock extends Component {
       const questions = (await TestServices.getQuestions(
         this.props.match.params.id
       )).data;
-      const test = (await TestServices.getOneTestTitles(this.props.match.params.id))
-        .data;
+      const test = (await TestServices.getOneTestTitles(
+        this.props.match.params.id
+      )).data;
       this.setState({
         test: {
           number: test[0].number,
@@ -44,14 +45,14 @@ class TestBlock extends Component {
       this.setState({ questions: questions });
       this.setState({ isLoading: false });
       this.props.onAddQuestionsLength(this.state.questions.length);
-      this.props.onAddCurrentTestTitles(this.state.test)
+      this.props.onAddCurrentTestTitles(this.state.test);
     }
   }
   questions = () =>
     this.state.questions.map((name, index) => {
       return (
-        <div className={classes.testBlock_wrapper}>
-          <TestItem
+        <div className={classes.testBlock_wrapper} key={index} >
+          <TestItem 
             index={index + 1}
             question={name.text}
             answ1={name.var1}
@@ -66,19 +67,16 @@ class TestBlock extends Component {
   render() {
     return (
       <div>
-          {/* <PageProgress color={'#FBB4B4'} height={4}/> */}
+        {/* <PageProgress color={'#FBB4B4'} height={4}/> */}
         <Header />
         <Drift text="Solve the test" />
-
+        <Beforeunload onBeforeunload={event => event.preventDefault()} />
         <div className={classes.main_wrap}>
           <div className={classes.TestBlock}>
             <div className={classes.main_container}>
               <div className={classes.main_item}>
                 <NavBar />
-                <Waypoint
-  
-  onLeave={this._handleWaypointLeave}
-/>
+                <Waypoint onLeave={this._handleWaypointLeave} />
                 {this.state.isLoading === true ? (
                   <div className={classes.desc_test}>Loading...</div>
                 ) : (
@@ -88,11 +86,11 @@ class TestBlock extends Component {
                       {this.state.test.number}
                     </div>
                     {this.questions()}
+                    <div className={classes.btn_bottom}>
+                      <ScrollButton scrollStepInPx="40" delayInMs="16.66" />
+                    </div>
                   </div>
                 )}
-                <div className={classes.btn_bottom}>
-                  <ScrollButton scrollStepInPx="40" delayInMs="16.66" />
-                </div>
               </div>
             </div>
           </div>
@@ -107,7 +105,7 @@ const mapDispachToProps = dispatch => {
       dispatch({ type: "ADD_CURRENT_QUEST_LENGTH", value: data }),
     clearAnswers: () => dispatch({ type: "CLEAR_ANSWER" }),
     onAddCurrentTestTitles: data =>
-    dispatch({ type: "ADD_CURRENT_TESR_TITLES", value: data }),
+      dispatch({ type: "ADD_CURRENT_TESR_TITLES", value: data })
   };
 };
 

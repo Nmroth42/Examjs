@@ -29,6 +29,26 @@
       "idTest": "later",
       "answer": 2,
       "explanation": "It’s a UI component library. The UI components are created with React using JavaScript, not a special template language. This approach is called creating composable UIs, and it’s fundamental to React’s philosophy."
+    },
+    {
+      "_id": "later",
+      "text": "The style attribute in JSX works differently than in plain HTML . With JSX , instead of string, you need to pass a JavaScript object, and CSS properties need to be in _ ('_' means placeholder)",
+      "var1": "camel-Case",
+      "var2": "kebab-case",
+      "var3": "Snake Case",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "For example: background-image becomes backgroundImage. font-size becomes fontSize. font-family becomes fontFamily. You can save the JavaScript object in a variable or render it inline with double curly braces ( {{...}} ). The double braces are needed because one set is for JSX and the other is for the JavaScript object literal."
+    },
+    {
+      "_id": "later",
+      "text": "Is it true that properties are immutable in the current component?",
+      "var1": "Yes",
+      "var2": "No",
+      "var3": "Only in class-based component",
+      "idTest": "later",
+      "answer": 1,
+      "explanation": "Properties are immutable in the current component, meaning you don’t change properties in this component unless you re-create the component by passing new values from a parent"
     }
   ]
 }

@@ -27,6 +27,7 @@ class TestsPage extends Component {
           </li>
         );
       }
+      return null
     });
   render() {
     return (
@@ -47,7 +48,7 @@ class TestsPage extends Component {
                     </ul>
                     <p>Vue.js</p>
                     <ul className={classes.test_chose_wrapper}>
-                      {this.testList("Vue.js")}
+                      {this.testList("React.js")}
                     </ul>
                   </div>
                 )}

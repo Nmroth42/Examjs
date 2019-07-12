@@ -2,10 +2,25 @@ import React, { Component } from "react";
 import classes from "./ResultTestItem.css";
 
 class ResultTestItem extends Component {
+  state = {
+    rightAnsw: parseInt(this.props.rightAnsw),
+    chosenAnsw: parseInt(this.props.chosenAnsw)
+  };
   render() {
     return (
       <div className={classes.testBlock}>
-        <span className={classes.paleText}>№{this.props.number}</span>
+        <div>
+          <span style={{ float: "left" }} className={classes.paleText}>
+            №{this.props.number}
+          </span>
+
+          {this.state.chosenAnsw === this.state.rightAnsw ? (
+            <span style={{ float: "right", color: "green" }}>+</span>
+          ) : (
+            <span style={{ float: "right", color: "red" }}>-</span>
+          )}
+        </div>
+        <br />
         <p>{this.props.text}</p>
         1.{this.props.var1}
         <br />
@@ -18,22 +33,11 @@ class ResultTestItem extends Component {
         Rigth answer: {this.props.rightAnsw}
         <br />
         <br />
-        <div className={classes.explainBlock}>Explanation: {this.props.explanation} </div>
+        <div className={classes.explainBlock}>
+          Explanation: {this.props.explanation}{" "}
+        </div>
       </div>
     );
   }
 }
-// function mapStateToProps(state) {
-//   return { answers: state.answers }
-// }
-// function mapStateToProps(state) {
-//     // const {resultData} = state
-//     return {
-//     resultData:state.resultData,
-//     answers: state.answers,
-//     questions_length:state.questions_length
-//     }
-
-//    }
-//    connect(mapStateToProps, null)
 export default ResultTestItem;

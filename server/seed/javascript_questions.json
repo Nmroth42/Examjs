@@ -182,13 +182,13 @@
     },
     {
       "_id": "later",
-      "text": "Javascript have methods like push and pop, shift and unshift.What methods are best used in conjunction in terms of speed of execution",
-      "var1": "push and pop",
-      "var2": "unshift and shift",
-      "var3": "push and shift",
+      "text": "What types of values(!) are supported in javascript?",
+      "var1": "int and string",
+      "var2": "default and custom",
+      "var3": "primitive and reference",
       "idTest": "later",
-      "answer": 1,
-      "explanation": "The pop and push methods only affect the last item in an array: pop by removing the last item, and push by inserting an item at the end of the array. On the other hand, the shift and unshift methods change the first item in the array. This means the indexes of any subsequent array items have to be adjusted. For this reason, push and pop are significantly faster operations than shift and unshift."
+      "answer": 3,
+      "explanation": "Primitive values are data that are stored on the stack.Primitive value is stored directly in the location that the variable accesses.Reference values are objects that are stored in the heap.Reference value stored in the variable location is a pointer to a location in memory where the object is stored.Primitive types include Undefined, Null, Boolean, Number, or String.\nObjects are aggregations of properties. A property can reference an object or a primitive. Primitives are values, they have no properties."
     }
   ]
 }

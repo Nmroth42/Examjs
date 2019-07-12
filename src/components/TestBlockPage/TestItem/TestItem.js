@@ -11,12 +11,15 @@ class TestItem extends Component {
     }
   };
   handleDestination(event) {
-    const options = this.state.options;
+    // const options = this.state.options;
     if (event.target.checked) {
-      this.state.currentAnswer.varAnswer = event.target.value;
-      // event.target.getAttribute('data-tag')
-      this.state.currentAnswer.idTask = event.target.getAttribute("idTask");
-      this.state.currentAnswer.number = event.target.getAttribute("number");
+      this.setState(
+        Object.assign(this.state.currentAnswer, {
+          varAnswer: event.target.value,
+          idTask: event.target.getAttribute("idtask"),
+          number: event.target.getAttribute("number")
+        })
+      );
       this.props.onAddAnswer(this.state.currentAnswer);
     }
   }
@@ -32,7 +35,7 @@ class TestItem extends Component {
             <input
               onClick={event => this.handleDestination(event)}
               type="radio"
-              idTask={this.props.taskId}
+              idtask={this.props.taskId}
               number={this.props.index}
               id={this.props.taskId + "_answ1"}
               className={classes.Input}
@@ -40,7 +43,7 @@ class TestItem extends Component {
               value="1"
             />
             <span>
-              <label for={this.props.taskId + "_answ1"}>
+              <label htmlFor={this.props.taskId + "_answ1"}>
                 {this.props.answ1}
               </label>
             </span>
@@ -51,7 +54,7 @@ class TestItem extends Component {
             <input
               onClick={event => this.handleDestination(event)}
               type="radio"
-              idTask={this.props.taskId}
+              idtask={this.props.taskId}
               number={this.props.index}
               id={this.props.taskId + "_answ2"}
               className={classes.Input}
@@ -59,7 +62,7 @@ class TestItem extends Component {
               value="2"
             />
             <span>
-              <label for={this.props.taskId + "_answ2"}>
+              <label htmlFor={this.props.taskId + "_answ2"}>
                 {this.props.answ2}
               </label>
             </span>
@@ -70,7 +73,7 @@ class TestItem extends Component {
             <input
               onClick={event => this.handleDestination(event)}
               type="radio"
-              idTask={this.props.taskId}
+              idtask={this.props.taskId}
               number={this.props.index}
               id={this.props.taskId + "_answ3"}
               className={classes.Input}
@@ -78,7 +81,7 @@ class TestItem extends Component {
               value="3"
             />
             <span>
-              <label for={this.props.taskId + "_answ3"}>
+              <label htmlFor={this.props.taskId + "_answ3"}>
                 {this.props.answ3}
               </label>
             </span>
@@ -94,7 +97,7 @@ class TestItem extends Component {
 // }
 const mapDispachToProps = dispatch => {
   return {
-    onAddAnswer: answ => dispatch({ type: "ADD", value: answ })
+    onAddAnswer: answ => dispatch({ type: "ADD_ANSWER", value: answ })
   };
 };
 export default connect(

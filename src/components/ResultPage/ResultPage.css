@@ -9,7 +9,7 @@
   .mainText {
     color:rgba(34, 28, 12, 0.76);
     font-size: 1.2em;
-   
+
   }
 a {
     color:black;
@@ -25,7 +25,7 @@ a {
     border-radius: 4px;
     margin: 25px;
     width: 50vw;
-  
+
     /* border-left: 1px solid rgba(77, 73, 73, 0.158);
     border-right: 1px solid rgba(77, 73, 73, 0.158); */
     background: white;
@@ -43,7 +43,7 @@ a {
     display: block;
     text-decoration: none;
     margin:2px;
-    background:rgba(252, 249, 249, 0.63);
+    background:rgba(252, 249, 249, 0.93);
    border: 1px solid rgba(141, 101, 101, 0.056);
    font-weight: 400;
     font-size: 1.2em;
@@ -54,27 +54,26 @@ a {
     border-radius: 4px;
   }
 
- 
+
 
   .top_panel {
     display:flex;
     justify-content: center;
-   margin-top:25px;
-   background: rgba(253, 219, 219, 0.52);
+   background: rgba(253, 219, 219, 0.12);
 }
 
 .bottom_pannel{
   display:flex;
   justify-content: center;
 
- 
+
 }
   .white_btn:hover {
-    
+
       cursor: pointer;
       color:rgba(59, 52, 32, 0.623);
-    
-    
+
+
   }
 
   @media screen and (max-width: 740px) {
