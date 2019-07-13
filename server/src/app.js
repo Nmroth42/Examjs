@@ -33,7 +33,7 @@ app.options('*', cors());
 //
 //    console.log("Example app listening at http://%s:%s", host, port)
 // })
-
+require('./routes')(app)
 app.use('/', serveStatic(path.join(__dirname, '../../build')))
 // app.use('/quiz', serveStatic(path.join(__dirname, '../../build')))
 // app.use('/api/questions/:testId', require('../routes/api/questions'))
@@ -45,7 +45,7 @@ app.use('/', serveStatic(path.join(__dirname, '../../build')))
 // app.get('/api/questions/:testId', TestController.show)
 // app.post('/api/answers', TestController.answers)
 
-require('./routes')(app)
+
 
 
 
