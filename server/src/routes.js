@@ -5,10 +5,8 @@ module.exports = app => {
   app.get("/api/tests", TestController.AllTestTitles);
   //описание отдельного теста
   app.get("/api/test/:testId", TestController.oneTestTitle);
-
-  //содержание теста(не обязательно привязанному по id)
+  //содержание теста
   app.get("/api/questions/:testId", TestController.testContent);
-
   //результат одного теста
   app.post("/api/answers", TestController.resultTest);
 };

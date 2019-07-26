@@ -46,7 +46,7 @@ class TestsPage extends Component {
                     <ul className={classes.test_chose_wrapper}>
                       {this.testList("JavaScript in web technologies")}
                     </ul>
-                    <p>Vue.js</p>
+                    <p>React.js</p>
                     <ul className={classes.test_chose_wrapper}>
                       {this.testList("React.js")}
                     </ul>

@@ -79,12 +79,13 @@ class ResultPage extends Component {
                   <div className={classes.mainText}>
                     {this.state.test.category} - Test №{this.state.test.number}{" "}
                     <br />
-                    Your result:
+                   <span  > Your result: 
                     {parseInt(
                       (this.state.result.countRigthAnsw /
                         this.props.questions_length) *
                         100
                     )}
+                     </span> 
                     %<br />{" "}
                   </div>
                 ) : null}

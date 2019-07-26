@@ -7,7 +7,7 @@ class Header extends Component {
     return (
       <div className={classes.main_container}>
         <div className={classes.main_item}>
-          <Link className={classes.content} to={"/main"}>
+          <Link className={classes.content} to={"/"}>
             ExamJS
           </Link>
         </div>

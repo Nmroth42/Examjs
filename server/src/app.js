@@ -1,27 +1,25 @@
-console.log('hello')
-const express = require('express')
-const bodyParser = require('body-parser')
-const morgan = require('morgan')
-const cors = require('cors')
-const serveStatic = require('serve-static')
-const path = require('path')
-const connectDB = require('../config/db')
-const mongoose = require('mongoose')
+console.log("hello");
+const express = require("express");
+const bodyParser = require("body-parser");
+const morgan = require("morgan");
+const cors = require("cors");
+const serveStatic = require("serve-static");
+const path = require("path");
+const connectDB = require("../config/db");
+// const mongoose = require("mongoose");
 
 // const {doIt} = require('../seed/sd')
 
-const TestController = require('../routes/api/questions')
-
+// const TestController = require("../routes/api/questions");
 
 connectDB();
 
+const app = express();
 
-const app = express()
-
-app.use(morgan('combine'))
-app.use(bodyParser.json())
-app.use(cors())
-app.options('*', cors());
+app.use(morgan("combine"));
+app.use(bodyParser.json());
+app.use(cors());
+// app.options('*', cors());
 
 // app.get('/', function (req, res) {
 //    res.send('Hello World');
@@ -33,8 +31,14 @@ app.options('*', cors());
 //
 //    console.log("Example app listening at http://%s:%s", host, port)
 // })
-require('./routes')(app)
-// app.use('/', serveStatic(path.join(__dirname, '../../build')))
+require("./routes")(app);
+app.use("/", serveStatic(path.join(__dirname, "../build")));
+// app.use('/result/:id', serveStatic(path.join(__dirname, '../build')))
+// app.use('/quiz', serveStatic(path.join(__dirname, '../build')))
+// app.use(express.static(path.join(__dirname, '../build')));
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname+'../build/index.html'));
+//   });
 // app.use('/quiz', serveStatic(path.join(__dirname, '../../build')))
 // app.use('/api/questions/:testId', require('../routes/api/questions'))
 
@@ -45,13 +49,7 @@ require('./routes')(app)
 // app.get('/api/questions/:testId', TestController.show)
 // app.post('/api/answers', TestController.answers)
 
+const port = process.env.PORT || 8080;
+app.listen(port);
 
-
-
-
-const port = process.env.PORT || 8080
-app.listen(port)
-
-
-
-console.log('listening on port: ' + port)
+console.log("listening on port: " + port);

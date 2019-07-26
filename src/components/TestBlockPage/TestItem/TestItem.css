@@ -48,8 +48,10 @@ label:hover {
   display: inline-block;
   width: 0.7em;
   height: 0.7em;
+  
+ 
   /* vertical-align: -0.26em; */
-  border-radius: 0em;
+  border-radius: 50%;
   /* border: 0.125em solid rgba(161, 161, 161, 0.432); */
   /* box-shadow: 0 0 0 0.1em rgb(167, 135, 135); */
   border:1px solid rgba(117, 99, 99, 0.384);

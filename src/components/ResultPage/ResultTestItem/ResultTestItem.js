@@ -15,9 +15,9 @@ class ResultTestItem extends Component {
           </span>
 
           {this.state.chosenAnsw === this.state.rightAnsw ? (
-            <span style={{ float: "right", color: "green" }}>+</span>
+            <span style={{ float: "right", color: "green" }}>correct </span>
           ) : (
-            <span style={{ float: "right", color: "red" }}>-</span>
+            <span style={{ float: "right", color: "red" }}>incorrect</span>
           )}
         </div>
         <br />
